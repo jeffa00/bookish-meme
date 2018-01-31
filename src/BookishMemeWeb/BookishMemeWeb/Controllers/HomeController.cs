@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using BookishMemeWeb.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookishMemeWeb.Controllers
 {
@@ -21,7 +22,7 @@ namespace BookishMemeWeb.Controllers
 
             return View();
         }
-
+        [Authorize]
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
